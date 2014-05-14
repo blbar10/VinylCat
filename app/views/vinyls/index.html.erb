@@ -1,0 +1,68 @@
+
+
+<div class="row" style="margin-top: 20px">
+  <div class="small-3 columns">
+
+    <%= form_tag(vinyls_path, method: :get) do %>
+      <%= text_field_tag(:q, nil, placeholder: "Search for vinyl") %>
+    <% end %>
+
+
+  </div>
+
+    <div class="small-9 columns">
+      <dl class="sub-nav">
+        <dd><%= link_to "Add New Record", new_vinyl_path %></dd>
+      </dl>
+
+    </div>
+
+</div>
+
+
+<div class="row">
+  <div class="small-3 columns">
+
+    <ul class="pricing-table">
+
+      <li class="title">genre</li>
+      <li class="bullet-item">
+        <%= link_to "all", vinyls_path %>
+      </li>
+      <% @genres.each do |genre| %>
+
+        <li class="bullet-item">
+          <%= link_to genre, vinyls_path({genre:genre}) %>
+        </li>
+
+      <% end %>
+
+    </ul>
+
+  </div>
+  <div class="small-9 columns">
+
+    <table>
+      <tr>
+        <td>Artist</td>
+        <td>Album</td>
+        <td>Year</td>
+        <td>Genre</td>
+      </tr>
+
+
+      <% @vinyls.each do |vinyl| %>
+        <tr>
+
+          <td><%= vinyl.artist %></td>
+          <td><%= vinyl.album %></td>
+          <td><%= vinyl.year %></td>
+          <td><%= vinyl.genre %></td>
+
+        </tr>
+
+      <% end %>
+    </table>
+
+  </div>
+</div>

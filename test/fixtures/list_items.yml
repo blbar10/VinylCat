@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  list_id: 1
+  vinyl_id: 1
+  cost: 1
+  seller: MyString
+  condition: MyString
+  notes: MyString
+
+two:
+  list_id: 1
+  vinyl_id: 1
+  cost: 1
+  seller: MyString
+  condition: MyString
+  notes: MyString
