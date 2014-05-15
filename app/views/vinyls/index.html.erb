@@ -65,8 +65,8 @@
           <td><%= vinyl.year %></td>
           <td><%= vinyl.genre %></td>
           <% if user_signed_in? %>
-            <td><%= button_to "I Own", user_vinyls_path({vinyl_id: vinyl.id, status: 'own'}), method: :post %></td>
-            <td><%= button_to "Wanted", user_vinyls_path({vinyl_id: vinyl.id, status: 'want'}), method: :post %></td>
+            <td><%= button_to "own", user_vinyls_path({vinyl_id: vinyl.id, status: 'own'}), method: :post, class: "button tiny" %></td>
+            <td><%= button_to "want", user_vinyls_path({vinyl_id: vinyl.id, status: 'want'}), method: :post, class: "button tiny" %></td>
           <% end %>
 
         </tr>

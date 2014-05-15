@@ -48,7 +48,7 @@
       <td><%= link_to want.vinyl.album, vinyl_path(want.vinyl) %></td>
       <td><%= want.vinyl.year %></td>
       <td><%= want.vinyl.genre %></td>
-      <td><%= button_to "Move to own", user_vinyls_path({vinyl_id: want.vinyl.id, status: 'own'}), method: :post %></td>  
+      <td><%= button_to "Got It", user_vinyls_path({vinyl_id: want.vinyl.id, status: 'own'}), method: :post, class: "button tiny" %></td>  
 
     </tr>
 
