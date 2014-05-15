@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140510162800) do
+ActiveRecord::Schema.define(version: 20140515001658) do
+
+  create_table "user_vinyls", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "vinyl_id"
+    t.string   "condition"
+    t.string   "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "status"
+  end
+
+  add_index "user_vinyls", ["user_id"], name: "index_user_vinyls_on_user_id"
+  add_index "user_vinyls", ["vinyl_id"], name: "index_user_vinyls_on_vinyl_id"
 
   create_table "users", force: true do |t|
     t.string   "name"
