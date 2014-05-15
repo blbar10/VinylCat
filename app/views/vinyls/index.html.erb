@@ -48,6 +48,12 @@
         <td>Album</td>
         <td>Year</td>
         <td>Genre</td>
+        <% if user_signed_in? %>
+          <td></td>
+          <td></td>
+        <% end %>
+
+
       </tr>
 
 
@@ -55,9 +61,13 @@
         <tr>
 
           <td><%= vinyl.artist %></td>
-          <td><%= vinyl.album %></td>
+          <td><%= link_to vinyl.album, vinyl_path(vinyl) %></td>
           <td><%= vinyl.year %></td>
           <td><%= vinyl.genre %></td>
+          <% if user_signed_in? %>
+            <td><%= button_to "I Own", user_vinyls_path({vinyl_id: vinyl.id, status: 'own'}), method: :post %></td>
+            <td><%= button_to "Wanted", user_vinyls_path({vinyl_id: vinyl.id, status: 'want'}), method: :post %></td>
+          <% end %>
 
         </tr>
 

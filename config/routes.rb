@@ -6,6 +6,7 @@ Vinylcat::Application.routes.draw do
 
   resources :users
   resources :vinyls
+  resources :user_vinyls
 
 
 

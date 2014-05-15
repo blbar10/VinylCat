@@ -22,12 +22,14 @@ namespace :data do
       year: "1978", genre: "Rock")
     seasons = Vinyl.create(artist: "Vivaldi", album: "Seasons", year: "2004", genre: "classical")
 
+    jump = Vinyl.create(artist: "Kriss Kross", album: "Jump", year: "1992", genre: "hip hop")
+
     #user_vinyl
-    UserVinyl.create(user: brett, vinyl: highway_to_hell, condition: "good", status: "owned")
-    UserVinyl.create(user: brett, vinyl: construction, condition: "very good+", status: "owned")
-    UserVinyl.create(user: brett, vinyl: cars, condition: "fair", status: "wanted")
-    UserVinyl.create(user: brett, vinyl: rumors, condition: nil, status: "wanted")
-    UserVinyl.create(user: brett, vinyl: seasons, condition: nil, status: "wanted")
+    UserVinyl.create(user: brett, vinyl: highway_to_hell, condition: "good", status: "own")
+    UserVinyl.create(user: brett, vinyl: construction, condition: "very good+", status: "own")
+    UserVinyl.create(user: brett, vinyl: cars, condition: "fair", status: "want")
+    UserVinyl.create(user: brett, vinyl: rumors, condition: nil, status: "want")
+    UserVinyl.create(user: brett, vinyl: seasons, condition: nil, status: "want")
 
   end
 end

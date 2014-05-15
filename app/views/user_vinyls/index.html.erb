@@ -1,0 +1,56 @@
+<h3>
+  owned
+</h3>
+
+<table>
+  <tr>
+    <td>Artist</td>
+    <td>Album</td>
+    <td>Year</td>
+    <td>Genre</td>
+    <td>condition</td>
+  </tr>
+
+
+  <% @owned.each do |own| %>
+    <tr>
+
+      <td><%= own.vinyl.artist %></td>
+      <td><%= link_to own.vinyl.album, vinyl_path(own.vinyl) %></td>
+      <td><%= own.vinyl.year %></td>
+      <td><%= own.vinyl.genre %></td>
+      <td><%= own.condition %></td>
+
+    </tr>
+
+  <% end %>
+</table>
+
+
+<h3>
+  wanted
+</h3>
+
+<table>
+  <tr>
+    <td>Artist</td>
+    <td>Album</td>
+    <td>Year</td>
+    <td>Genre</td>
+    <td></td>
+  </tr>
+
+
+  <% @wanted.each do |want| %>
+    <tr>
+
+      <td><%= want.vinyl.artist %></td>
+      <td><%= link_to want.vinyl.album, vinyl_path(want.vinyl) %></td>
+      <td><%= want.vinyl.year %></td>
+      <td><%= want.vinyl.genre %></td>
+      <td><%= button_to "Move to own", user_vinyls_path({vinyl_id: want.vinyl.id, status: 'own'}), method: :post %></td>  
+
+    </tr>
+
+  <% end %>
+</table>

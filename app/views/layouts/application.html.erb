@@ -31,7 +31,7 @@
         <!-- Right Nav Section -->
         <% if user_signed_in? %>
           <ul class="right">
-            <li><a href="#">My Catalog</a></li>
+            <li><%= link_to "My Catalog", user_vinyls_path %></li>
             <li><a href="#">Friends</a></li>
 
             <li class="has-dropdown">
