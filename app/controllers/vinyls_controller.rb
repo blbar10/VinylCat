@@ -30,7 +30,7 @@ class VinylsController < ApplicationController
       redirect_to vinyl_path(@vinyl)
 
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -46,7 +46,7 @@ class VinylsController < ApplicationController
       redirect_to vinyl_path(@vinyl.vinyl_id)
 
     else
-      render 'edit'
+      render :edit
     end
   end
 
